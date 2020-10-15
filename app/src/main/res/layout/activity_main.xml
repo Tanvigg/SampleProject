@@ -19,6 +19,8 @@
        app:layout_constraintLeft_toLeftOf="parent"
        app:layout_constraintRight_toRightOf="parent"
        style="@style/Widget.AppTheme.ButtonStyle.Icon"
+       android:focusable="true"
+       android:nextFocusLeft="@id/button_play"
        />
 
    <Button
