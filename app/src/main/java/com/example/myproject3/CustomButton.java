@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.material.button.MaterialButton;
 
@@ -29,7 +30,7 @@ public class CustomButton extends MaterialButton {
     }
 
     private void changeBgDrawable(){
-        setBackgroundResource(isFocused?R.drawable.shape_rect_focused:R.drawable.shape_rect_normal);
+        setBackgroundDrawable(isFocused?ContextCompat.getDrawable(getContext(),R.drawable.shape_rect_focused):ContextCompat.getDrawable(getContext(),R.drawable.shape_rect_normal));
     }
 
 
