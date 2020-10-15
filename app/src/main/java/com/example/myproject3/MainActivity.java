@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.os.Bundle;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
     CustomButton customButton;
@@ -16,7 +17,11 @@ public class MainActivity extends AppCompatActivity {
 
         customButton.setIcon(ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_detail_play));
         customButton.setText("Play");
-        customButton.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.select));
-        customButton.setFocusable(true);
+        customButton.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                customButton.setIsFocused(b);
+            }
+        });
     }
 }

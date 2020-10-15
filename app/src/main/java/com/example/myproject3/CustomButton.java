@@ -9,24 +9,28 @@ import androidx.annotation.Nullable;
 import com.google.android.material.button.MaterialButton;
 
 public class CustomButton extends MaterialButton {
+    private boolean isFocused = true;
 
     public CustomButton(@NonNull Context context) {
         super(context);
-        init(context,null,0);
     }
 
     public CustomButton(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        init(context,attrs,0);
     }
 
     public CustomButton(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context,attrs,defStyleAttr);
     }
 
-    private void init(Context context, AttributeSet attr, int defStyleAttr){
-
+    public void setIsFocused(boolean isFocused){
+        this.isFocused = isFocused;
+        changeBgDrawable();
     }
+
+    private void changeBgDrawable(){
+        setBackgroundResource(isFocused?R.drawable.shape_rect_focused:R.drawable.shape_rect_normal);
+    }
+
 
 }
